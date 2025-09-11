@@ -13,5 +13,21 @@
 # for i in range(n):
 #     print(i)  # O(n)
 
-while n > 1:
-    n = n // 2   # log n
+# while n > 1:
+#     n = n // 2   # log n
+
+# temperature = 98.06
+# original = temperature
+#
+# print(temperature)
+# print(" ")
+# print(original)
+#
+# print("================")
+#
+# # temperature = temperature + 98.06
+# #
+# # print(temperature)
+# # print(" ")
+# # print(original)
+
