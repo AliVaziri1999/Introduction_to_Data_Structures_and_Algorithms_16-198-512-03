@@ -30,7 +30,11 @@ def sumString(n):
 ##############################
 
 # Question 4:
-
+def print_figure(n, current=1):
+    if current > n: # Base case: stop when current is bigger than n
+        return
+    print('X' * current)
+    print_figure(n, current + 1) # recursive call for the next row
 
 ##############################
 
@@ -56,3 +60,10 @@ if __name__ == "__main__":
 
 
     # Q3 - Test case:
+    print("Q3 - Test case:")
+
+
+    # Q4 - Test case:
+    print("Q4 - Test case:")
+    n = 5
+    print_figure(n)
