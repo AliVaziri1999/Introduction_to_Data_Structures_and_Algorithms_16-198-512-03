@@ -64,7 +64,7 @@ def climbCount(n):
     if n < 0:
         return 0
 
-    return climbCount(n - 1) + climbCount(n - 2) + climbCount(n - 3) # Recursive, calculate the number of ways to climb the staircase
+    return climbCount(n - 1) + climbCount(n - 2) + climbCount(n - 3) # Recursive; try step 1, 2, or 3.
 
 
 # Q5 - Test case:
