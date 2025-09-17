@@ -105,16 +105,16 @@ between 0–1,
 between 1–2,
 after index 2.
 
-By inserting “d” into each of those four positions for every permutation of “abc,” I obtain all permutations of “abcd,” without missing any and without duplicates.
-For example, starting from “abc,” the four insertions give “dabc,” “adbc,” “abdc,” and “abcd.” Doing the same operation for “acb,” “bac,” “bca,” “cab,” and “cba” produces four new strings from each:
+By inserting “d” into each of those four positions for every permutation of “abc,” I obtain all permutations of “abcd”, without missing any and without duplicates.
+For example, starting from “abc,” the four insertions give dabc, adbc, abdc, and abcd. Doing the same operation for acb, bac, bca, cab, and cba produces four new strings from each:
 
-From "abc" we get: "dabc", "adbc", "abdc", "abcd".
-From "acb" we get: "dacb", "adcb", "acdb", "acbd".
-From "bac" we get: "dbac", "bdac", "badc", "bacd".
-From "bca" we get: "dbca", "bdca", "bcda", "bcad".
-From "cab" we get: "dcab", "cdab", "cadb", "cabd".
-From "cba" we get: "dcba", "cdba", "cbda", "cbad".
+From abc we get: dabc, adbc, abdc, abcd
+From acb we get: dacb, adcb, acdb, acbd
+From bac we get: dbac, bdac, badc, bacd
+From bca we get: dbca, bdca, bcda, bcad
+From cab we get: dcab, cdab, cadb, cabd
+From cba we get: dcba, cdba, cbda, cbad
 
-collecting them all 6 x 4 = 24 permutations, which is exactly 4! results.
+collecting them all 6 x 4 = 24 permutations, which is 4! results.
 Generally, if I already have all (n−1)! permutations of a length (n−1) string, inserting the Nth letter into each of the n possible positions across all those strings n x (n−1)! = n! permutations. That’s exactly why this “insert in every position” construction is both complete and non-redundant.
 """
