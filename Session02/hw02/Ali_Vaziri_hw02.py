@@ -27,17 +27,38 @@ def sumString(n):
         return sumString(n - 1) + "+" + str(n)
 
 
-# # Q2 - Test case:
-# print("Q2 - Test case:")
-# test_value = 5
-# print(sumString(test_value))
+# Q2 - Test case:
+print("Q2 - Test case:")
+test_value = 5
+print(sumString(test_value))
 ##############################
 
 # Question 3:
+def rearrange(L, k):
+
+    if len(L) <= 1: # rearrange L so that all values < k appear before values >= k , in place.
+        return L
+    p_recursive(L, k, first=0, last=len(L) - 1)
+    return L
 
 
-# # Q3 - Test case:
-# print("Q3 - Test case:")
+def p_recursive(A, k, first, last):
+
+    if first >= last: # Base case is pointers, [first for (front) and last for (back)], meet or cross.
+        return
+
+    if A[first] < k: # If the front item already belongs to the left side, advance first
+        p_recursive(A, k, first + 1, last)
+    else:
+        A[first], A[last] = A[last], A[first] # A[first] >= k --> swap it to the back and shrink from the right
+        p_recursive(A, k, first, last - 1)
+
+
+# Q3 - Test case:
+print("Q3 - Test case:")
+print(rearrange([3, 4, 8, 9, 5, 2], 8))
+print(rearrange([8, 8, 3, 4, 8, 9, 5, 2], 8))
+print(rearrange([8, 7, 6, 1, 2, 3, 4], 3))
 ##############################
 
 # Question 4:
@@ -48,10 +69,10 @@ def figure(n, current=1):
     figure(n, current + 1) # recursive call for the next row
 
 
-# # Q4 - Test case:
-# print("Q4 - Test case:")
-# n = 5
-# figure(n)
+# Q4 - Test case:
+print("Q4 - Test case:")
+n = 5
+figure(n)
 ##############################
 
 # Question 5:
@@ -65,8 +86,8 @@ def climbCount(n):
     return climbCount(n - 1) + climbCount(n - 2) + climbCount(n - 3) # Recursive; try step 1, 2, or 3.
 
 
-# # Q5 - Test case:
-# print("Q5 - Test case:")
-# n = 4
-# print(climbCount(n))
+# Q5 - Test case:
+print("Q5 - Test case:")
+n = 4
+print(climbCount(n))
 ##############################
