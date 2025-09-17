@@ -13,9 +13,9 @@ def toInt(s):
 
 
 # Q1 - Test case:
+print("Q1 - Test case:")
 test_string = "2375"
 result = toInt(test_string)
-print("Q1 - Test case:")
 print(result)
 ##############################
 
@@ -29,9 +29,9 @@ def sumString(n):
 
 
 # Q2 - Test case:
+print("Q2 - Test case:")
 test_value = 5
 result = sumString(test_value)
-print("Q2 - Test case:")
 print(result)
 ##############################
 
@@ -68,5 +68,8 @@ def climbCount(n):
 
 
 # Q5 - Test case:
-
+print("Q5 - Test case:")
+n = 4
+result = climbCount(n)
+print(result)
 ##############################
