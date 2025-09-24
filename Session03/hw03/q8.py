@@ -1,14 +1,3 @@
-# def rearrange_iter(S, k):
-#     i, j = 0, len(S) - 1
-#     while i <= j:
-#         if S[i] < k:
-#             i += 1                 # good element stays; move on
-#         else:
-#             S[i], S[j] = S[j], S[i]  # move bad element to the right side
-#             j -= 1                  # right region shrinks
-#     # in-place; no return needed
-
-
 def rearrange_iter(L, k):
     i, j = 0, len(L) - 1
 
