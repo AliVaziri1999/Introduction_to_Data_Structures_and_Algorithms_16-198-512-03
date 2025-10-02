@@ -4,7 +4,7 @@
 # Fall 2025
 # Author: Ali Vaziri
 
-# Please check my code from the line 110.
+# Please check my code from the line 110 and line 162.
 
 
 class LinkedList:
