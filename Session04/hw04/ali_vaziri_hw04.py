@@ -44,3 +44,32 @@ def removeDuplicates(self):
                 self._tail = curr
         else:
             curr = curr._next
+
+
+
+# Test case:
+
+'''
+from linked_list import LinkedList
+
+ll = LinkedList()
+for x in [1, 1, 2, 3, 3]:
+    ll.add_to_rear(x)
+
+print("start:   ", ll, "| size()", ll.size())    
+
+ll.removeDuplicates()
+print("dedup:   ", ll, "| size()", ll.size())    
+
+ll.reverse()
+print("reverse: ", ll, "| size()", ll.size())     
+
+'''
+
+# The output of Test:
+
+'''
+start:    1 -> 1 -> 2 -> 3 -> 3 | size() 5
+dedup:    1 -> 2 -> 3 | size() 3
+reverse:  3 -> 2 -> 1 | size() 3
+'''
