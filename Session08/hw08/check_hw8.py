@@ -1,5 +1,5 @@
 # check_hw8.py
-from PriorityQueueHW import StackUsingPriorityQueue, QueueUsingPriorityQueue, findKthElement
+from edit02PriorityQueueHW import StackUsingPriorityQueue, QueueUsingPriorityQueue, findKthElement
 import random, heapq
 
 def test_stack():
