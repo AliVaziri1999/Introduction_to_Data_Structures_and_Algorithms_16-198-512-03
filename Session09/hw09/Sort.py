@@ -52,7 +52,13 @@ def count_number_of_transpositions(a: List[int]) -> int:
 print("\nTest Q1:")
 for arr in ([8,4,2,1], [1,2,3,4], [3,1,2], [2,1,3,1,2]):
     print(f"{arr} -> {count_number_of_transpositions(arr)}")
-
+'''
+Test Q1:
+[8, 4, 2, 1] -> 6
+[1, 2, 3, 4] -> 0
+[3, 1, 2] -> 2
+[2, 1, 3, 1, 2] -> 4
+'''
 
 
 ##### Q2
@@ -63,7 +69,7 @@ Approach:
 Standard divide-and-conquer (merge-sort over (value, index)). During the merge, whenever right[j] < left[i],
 every remaining left[ii] (i ≤ ii < mid) forms a transposition with right[j]; emit those pairs.
 
-Time:  O(n log n + k), where k is the number of printed pairs (the output itself is Θ(k)).
+Time:  O(n log n + k) where k is the number of printed pairs.
 Space: O(n)
 """
 
@@ -120,7 +126,36 @@ for S in ([8,4,2,1], [1,2,3,4], [3,1,2], [2,1,3,1,2]):
     print(f"Input: {S}")
     pairs = print_transpositions(S) # prints all
     print(f"k = {len(pairs)}\n")
+'''
+Test Q2:
+Input: [8, 4, 2, 1]
+Transpositions (left > right):
+(8, 4)
+(2, 1)
+(4, 1)
+(8, 1)
+(4, 2)
+(8, 2)
+k = 6
 
+Input: [1, 2, 3, 4]
+No transpositions found
+k = 0
+
+Input: [3, 1, 2]
+Transpositions (left > right):
+(3, 1)
+(3, 2)
+k = 2
+
+Input: [2, 1, 3, 1, 2]
+Transpositions (left > right):
+(2, 1)
+(3, 1)
+(3, 2)
+(2, 1)
+k = 4
+'''
 
 
 ##### Q3
@@ -162,15 +197,17 @@ class Sort:
         if n <= 1:
             return
 
-        while True:
-            did_swap = False
-            for _ in range(n):
+        for m in range(n, 1, -1): # m = size of the prefix we are bubbling through
+
+            for _ in range(m - 1): # (m-1) compare/swap/rotate steps over the active prefix
                 if self.first() > self.second():
                     self.swap_top_two()
-                    did_swap = True
                 self.move_first_to_bottom()
-            if not did_swap:
-                break
+
+            # rotate the rest so the head returns to the same spot
+            # this keeps the newly placed maximum at the very end (tail)
+            for _ in range(n - (m - 1)):
+                self.move_first_to_bottom()
 
     def is_sorted(self):
         for i in range(self.size()-1):
@@ -187,3 +224,13 @@ if __name__ == "__main__":
     c.sort()
     print("AFTER :", c)
     print(c.is_sorted())
+
+
+
+'''
+Q3 output:
+
+BEFORE: [15, 12, 1, 16, 13, 11, 7, 0, 18, 5, 17, 3, 8, 14, 9, 6, 2, 4, 19, 10]
+AFTER : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+True
+'''
