@@ -25,17 +25,17 @@ def validTopologicalOrder(graph, sequence):
 # graphT from .txt file:
 num_vertices = 7
 edges = [
-    (0,5),
-    (0,2),
-    (0,1),
-    (3,6),
-    (3,5),
-    (5,4),
-    (5,2),
-    (6,0),
-    (6,3),
-    (2,1),
-    (1,4)
+    (0, 5),
+    (0, 2),
+    (0, 1),
+    (3, 6),
+    (3, 5),
+    (3, 4),
+    (5, 2),
+    (6, 4),
+    (6, 0),
+    (3, 2),
+    (1, 4)
 ]
 
 G = build_graph_from_edges(num_vertices, edges)
