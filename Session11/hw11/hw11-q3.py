@@ -1,7 +1,7 @@
 """
 Homework 11
 Group assignment
-Authors:
+Authors: Ali Vaziri, Andy Chen, Advait Ashtikar
 Class: DSA 16-198-512-03
 Fall 2025
 """
