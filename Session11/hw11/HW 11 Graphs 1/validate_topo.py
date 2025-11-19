@@ -26,12 +26,8 @@ def load_directed_edges(filename):
     return edges
 
 
-"""
-checks if sequence is a valid topological order for the DAG in graphT.txt
-"""
 def validTopologicalOrder(filename, sequence):
 
-    # Load the edges as u -> v
     edges = load_directed_edges(filename)
 
     # create a map to store the position (index) of each vertex in the proposed sequence, this allows us to check positions in O(1) time.
