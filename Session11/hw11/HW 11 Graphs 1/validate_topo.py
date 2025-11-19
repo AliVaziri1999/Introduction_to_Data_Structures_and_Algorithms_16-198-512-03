@@ -1,7 +1,6 @@
 # Question 3
 import sys
 
-
 def load_directed_edges(filename):
     """
     Reads the graph file as a DAG
